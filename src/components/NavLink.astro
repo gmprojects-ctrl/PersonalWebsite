@@ -1,0 +1,20 @@
+---
+// Nav Link component for rendering navigation links with consistent styling and behavior.
+interface Props {
+  href: string;
+  class?: string;
+  target?: string;
+  rel?: string;
+}
+// Destructure props with a default class for styling.
+const { href, class: className = 'hover:text-slate-400 transition-colors', target = '', rel = '' } = Astro.props;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class={className}
+>
+  <slot />
+</a>
