@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import HeadLayout from './HeadLayout.astro';
 
 // Global Props for the Base Layout component.
 interface Props {
@@ -15,14 +16,7 @@ const { title, description = 'John Smith — Software Developer & Portfolio' } =
 <!-- Base layout component for all the webpages -->
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-  </head>
+  <HeadLayout title={title} description={description} />
   <body class="bg-slate-950 text-slate-100 antialiased">
     <!-- Navigation bar component for the personal website -->
     <Nav />

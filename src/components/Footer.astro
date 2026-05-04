@@ -1,11 +1,19 @@
 ---
+// Get the global constants
+import { NAME, CURRENT_YEAR } from '../data/constants.ts';
+
+
+
+// Import the NavLink component for navigation links in the footer
 import NavLink from './NavLink.astro';
+
+
 ---
 <!-- Footer component for all the webpages -->
 <footer class="py-8 px-6 border-t border-slate-800">
   <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
     <p class="text-slate-600 text-sm">
-      © {new Date().getFullYear()} John Smith. All rights reserved.
+      © {CURRENT_YEAR} {NAME}. All rights reserved.
     </p>
     <div class="flex gap-6 text-sm text-slate-600">
       <NavLink href="/about/">About</NavLink>

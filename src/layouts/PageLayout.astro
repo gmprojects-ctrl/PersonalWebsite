@@ -1,0 +1,15 @@
+---
+// Import the sections
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Extract the title from the props passed to the layout
+const { title } = Astro.props;
+---
+<BaseLayout title={title}>
+  <Section title={title}>
+    <!-- slot for the page content -->
+    <slot />
+  </Section>
+
+
