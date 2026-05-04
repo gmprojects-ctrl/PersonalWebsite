@@ -1,0 +1,64 @@
+---
+// Create a componentn for experiences such as education or work experience.
+interface Props {
+  role: string;
+  institution: string;
+  location: string;
+  startYear: string | number;
+  endYear: string | number;
+  descriptions: string[];
+  skills?: string[];
+}
+
+const {
+    role,
+    institution,
+    location,
+    startYear,
+    endYear,
+    descriptions,
+    skills,
+} = Astro.props;
+---
+
+
+
+<details class="group border-4 border-blue-500 rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-blue-400 hover:bg-slate-800 experience-card mb-4">
+  <summary class="cursor-pointer list-none">
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+      <div>
+        <h3 class="text-xl font-semibold text-white">
+         {role}
+        </h3>
+        <h4 class="text-lg text-slate-400">
+          {institution}
+        
+        <p class="text-sm text-white">
+          {location}
+        </p>
+        {skills && skills.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-3">
+            {skills.map((skill: string) => (
+              <span class="bg-slate-600 text-white text-xs px-3 py-1 rounded">
+                {skill}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <p class="text-lg font-medium text-white">
+        {startYear} - {endYear}
+      </p>
+    </div>
+  </summary>
+
+  <ul class="mt-6 list-disc space-y-2 pl-5 text-whited">
+    {descriptions.map((description: string, index: number) => (
+    <li style={`--delay: ${(index + 1) * 0.1}s`}>
+      {description}
+    </li>
+  ))}
+  </ul>
+</details>
+

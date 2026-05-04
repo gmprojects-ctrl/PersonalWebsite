@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import HeadLayout from './HeadLayout.astro';
+import { NAME } from '../data/constants';
 
 // Global Props for the Base Layout component.
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
   description?: string;
 }
 // Destructure props with a default description.
-const { title, description = 'John Smith — Software Developer & Portfolio' } = Astro.props;
+const { title, description = `${NAME} Personal Website` } = Astro.props;
 ---
 <!-- Base layout component for all the webpages -->
 <!doctype html>

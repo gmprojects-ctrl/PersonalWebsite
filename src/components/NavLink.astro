@@ -7,7 +7,7 @@ interface Props {
   rel?: string;
 }
 // Destructure props with a default class for styling.
-const { href, class: className = 'hover:text-slate-400 transition-colors', target = '', rel = '' } = Astro.props;
+const { href, class: className = 'hover:text-slate-400 transition-colors', target, rel } = Astro.props;
 ---
 
 <a

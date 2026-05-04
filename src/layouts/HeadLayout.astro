@@ -1,13 +1,19 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { NAME } from "../data/constants";
+import favicon from "../assets/favicon.svg";
 
-  // Abstract the head section into a separate layout component for better reusability and maintainability
-  // Destructure props with a default description.
-  const { title, description = 'John Smith — Software Developer & Portfolio' } = Astro.props;
+// Abstract the head section into a separate layout component for better reusability and maintainability
+interface Props {
+  title: string;
+  description?: string;
+}
+// Destructure props with a default description.
+const { title, description = `${NAME} — Software Developer & Portfolio` } = Astro.props;
 ---
 <head>
 <meta charset="utf-8" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href={favicon.src} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 <meta name="description" content={description} />

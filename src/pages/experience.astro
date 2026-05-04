@@ -1,9 +1,63 @@
 ---
 // Import the necessary components
 import PageLayout from '../layouts/PageLayout.astro';
+import Experience from '../components/Experience.astro';
 ---
 <PageLayout title="Experience">
-  <p>
-    Hello! I'm John Smith, a passionate software developer with a love for creating innovative solutions. With over 5 years of experience in the tech industry, I specialize in full-stack development, working with technologies like JavaScript, Python, and cloud platforms. When I'm not coding, you can find me exploring new hiking trails or experimenting with new recipes in the kitchen. Welcome to my portfolio website!
-  </p>
+
+    <Experience
+        role="Short Term Trading Analyst"
+        institution="Smartest Energy"
+        location="London, UK"
+        startYear="2024"
+        endYear="Present",
+        skills={["Python", "Azure","Fabric", "Intraday Power", "Day Ahead Power"]}
+        descriptions={
+            [
+               "Trading Analyst at Smartest Energy"
+            ]
+        }
+        />
+    
+    <Experience
+        role="Trading Analyst"
+        institution="Smartest Energy"
+        location="London, UK"
+        startYear="2024"
+        endYear="2025"
+        skills={["Python", "Azure","Fabric", "Gas ", "Power", "Emissions"]}
+        descriptions={
+            [
+               "Trading Analyst at Smartest Energy"
+            ]
+        }
+        />
+
+    <Experience
+        role="Quantitative Trading Analyst"
+        institution="Hartree Partners"
+        location="London, UK"
+        startYear="2023"
+        endYear="2024"
+        skills={["Python", "PostgresSQL", "Crude Oil", "Refined Products"]}
+        descriptions={
+            [
+               "Quantitative Trading Analyst at Hartree Partners"
+            ]
+        }
+        />
+    <Experience
+        role="BSc. Mathematics"
+        institution="University of Warwick"
+        location="Coventry, UK"
+        startYear="2020"
+        endYear="2023"
+        skills={["Python", "C/C++","Java", "Mathematical Modelling","Machine Learning", "Data Analysis", ]}
+        descriptions={
+            [
+               "BSc. Mathematics at University of Warwick"
+            ]
+        }
+        />
+
 </PageLayout>
