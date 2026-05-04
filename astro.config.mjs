@@ -12,9 +12,10 @@ export default defineConfig({
   },
   fonts: [
     {
-      provider: fontProviders.google(),
-      name : "Stack Sans Text",
-      cssVariable : "--custom-font-stack-sans-text",
+      provider: fontProviders.fontsource(),
+      name : "Archivo",
+      cssVariable : "--custom-font",
+      fallbacks : ["sans-serif"]
     }
   ]
 });

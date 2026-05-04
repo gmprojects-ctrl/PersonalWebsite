@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
 import { NAME } from "../data/constants";
 import favicon from "../assets/favicon.svg";
 
@@ -13,6 +14,7 @@ const { title, description = `${NAME} — Software Developer & Portfolio` } = As
 ---
 <head>
 <meta charset="utf-8" />
+<Font cssVariable="--custom-font"/>
 <link rel="icon" type="image/svg+xml" href={favicon.src} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
