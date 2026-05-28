@@ -47,17 +47,18 @@ const {
         )}
       </div>
 
-      <p class="text-lg font-medium text-white">
-        {startYear} - {endYear}
+      <p class="text-lg font-medium text-white whitespace-nowrap">
+        <!-- If nothing is provided, display and empty string -->
+       {startYear && endYear ? `${startYear} - ${endYear}` : ''}
       </p>
     </div>
   </summary>
 
   <ul class="mt-6 list-disc space-y-2 pl-5 text-whited">
     {descriptions.map((description: string, index: number) => (
-    <li style={`--delay: ${(index + 1) * 0.1}s`}>
-      {description}
-    </li>
+      // Use set:html to render the description as HTML, allowing for formatting.
+      // Add a delay to each list item for a staggered animation effect.
+    <li style={`--delay: ${(index + 1) * 0.1}s`} set:html={description} />
   ))}
   </ul>
 </details>

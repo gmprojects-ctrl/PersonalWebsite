@@ -1,0 +1,52 @@
+---
+// TS interface for a single contact tile
+interface Contact {
+  title: string;
+  href: string;
+}
+
+// TS interface for props
+interface Props {
+  contacts?: Contact[];
+  align?: 'left' | 'center' | 'right';
+  width?: string;
+  height?: string;
+  extraClass?: string;
+}
+
+
+// Default settings
+const {
+  contacts = [
+    { title: 'Get in touch', href: 'mailto:john.smith@example.com' }
+  ],
+  align = 'center',
+  width = 'w-80',
+  height = 'h-40',
+  extraClass = ''
+}: Props = Astro.props;
+
+
+// Determine Tailwind alignment classes based on the align parameter (dynamic)
+const justifyClass =
+  align === 'left'
+    ? 'justify-start'
+    : align === 'right'
+      ? 'justify-end'
+      : 'justify-center';
+---
+
+<!-- Main Contact Component -->
+<div class={`flex flex-wrap gap-4 ${justifyClass} items-center ${extraClass}`}>
+  <!-- Render one tile per contact -->
+  {contacts.map((contact) => (
+    <a
+      href={contact.href}
+      class={`bg-slate-600 text-white rounded-lg ${width} ${height} flex items-center justify-center p-2 hover:bg-slate-700 transition`}
+    >
+      <div class="text-center">
+        <div class="text-lg font-semibold">{contact.title}</div>
+      </div>
+    </a>
+  ))}
+</div>
